@@ -12,12 +12,7 @@ public class MonoFluxTest{
                 .log();
         monoString.subscribe(System.out::println, (e) -> System.out.println(e.getMessage()));
     }
-    @Test
-    public void testFlux(){
-        Flux<String> fluxString = Flux.just("Spring", "Hibernate", "Microservices")
-                .concatWithValues("AWS")
-                .concatWith(Flux.error(new RuntimeException("Exception accured in Flux")))
-                .log();
-        fluxString.subscribe(System.out::println);
-    }
+
+
+
 }
